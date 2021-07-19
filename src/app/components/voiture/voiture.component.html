@@ -1,0 +1,35 @@
+<div class="voiture">
+    <p>Liste des voitures</p>
+</div>
+<div class="content">
+    <div class="mat-elevation-z8">
+        <mat-progress-bar mode='indeterminate' *ngIf="showLoader"></mat-progress-bar>
+        <table mat-table [dataSource]="liste" class="mat-elevation-z8" matSort>
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>id</th>
+                <td mat-cell *matCellDef="let element;index as i;"> {{i+1}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="Title" class="titre">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+                <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Texte" class="titre">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Texte</th>
+                <td mat-cell *matCellDef="let element"> {{element.body}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Action">
+                <th class="th" mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-raised-button color="primary" *ngIf="login">Commenter</button>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25 , 100]" [pageSize]="10" showFirstLastButtons></mat-paginator>
+    </div>
+</div>

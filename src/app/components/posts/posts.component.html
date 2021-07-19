@@ -1,33 +1,11 @@
-<!-- <div>
-    <mat-card class="card">
-        <mat-card-title>post</mat-card-title>
-        <mat-card-subtitle>post</mat-card-subtitle>
-        <img src="" mat-card-image>
-        <mat-card-content>post</mat-card-content>
-        <mat-card-footer>
-            <button mat-raised-button color="primary">Primary</button>
-        </mat-card-footer>
-    </mat-card>
-
-</div> -->
-
-<div style="display:flex; flex-direction: row;">
-    <mat-card class="example-card">
-        <mat-card-title>post</mat-card-title>
-        <mat-card-subtitle>post</mat-card-subtitle>
-        <img src="" mat-card-image>
-        <mat-card-content>post</mat-card-content>
-        <mat-card-footer>
-            <button mat-raised-button color="primary">Primary</button>
-        </mat-card-footer>
-    </mat-card>
-    <mat-card class="example-card">
-        <mat-card-title>post</mat-card-title>
-        <mat-card-subtitle>post</mat-card-subtitle>
-        <img src="" mat-card-image>
-        <mat-card-content>post</mat-card-content>
-        <mat-card-footer>
-            <button mat-raised-button color="primary">Primary</button>
-        </mat-card-footer>
-    </mat-card>
-</div>
+<ngb-carousel *ngIf="images">
+    <ng-template ngbSlide *ngFor="let item of images">
+        <div class="picsum-img-wrapper">
+            <img [src]="item" alt="Random first slide" class="carousel" onError="this.src='assets/image.jpg'">
+        </div>
+        <div class="carousel-caption">
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>

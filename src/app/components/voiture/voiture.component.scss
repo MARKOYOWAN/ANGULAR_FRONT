@@ -1,0 +1,19 @@
+table {
+    width: 100%;
+    margin-top: 2%;
+}
+
+.titre {
+    width: 50%;
+}
+
+.mat-row:hover .mat-cell {
+    border-color: currentColor;
+}
+
+.voiture {
+    text-align: center;
+    margin-top: 2%;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

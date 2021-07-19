@@ -1,0 +1,11 @@
+<div class="example-container">
+    <mat-progress-bar mode='indeterminate' *ngIf="showLoader"></mat-progress-bar>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input [(ngModel)]="modelCLient.email" matInput placeholder="pat@example.com">
+    </mat-form-field>
+    <div class="btn_log">
+        <button id="btn_with" mat-raised-button (click)="loginUser()">Connexion</button>
+    </div>
+
+</div>
