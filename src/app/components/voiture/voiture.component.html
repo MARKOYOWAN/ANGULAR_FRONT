@@ -1,6 +1,15 @@
 <div class="voiture">
     <p>Liste des voitures</p>
 </div>
+
+<div>
+    <mat-form-field class="search-form-field search-div" floatLabel="never">
+        <input matInput type="text" placeholder="Rechercher" [(ngModel)]="searchKey" autocomplete="off" (keyup)="applyFilter()">
+        <button mat-button *ngIf="searchKey" matSuffix mat-icon-button aria-label="Clear" (click)="onSearchClear()">
+  <mat-icon>close</mat-icon>
+</button>
+    </mat-form-field>
+</div>
 <div class="content">
     <div class="mat-elevation-z8">
         <mat-progress-bar mode='indeterminate' *ngIf="showLoader"></mat-progress-bar>

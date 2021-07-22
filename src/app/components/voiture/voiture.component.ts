@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiGlobalService } from 'src/app/services/api-global.service';
+import { CommentaireComponent } from '../commentaire/commentaire.component';
 
 
 @Component({
@@ -17,7 +19,9 @@ export class VoitureComponent implements OnInit {
   displayedColumns: string[] = ['id', 'Title', 'Texte', 'Action'];
   showLoader: boolean = false;
   id: Number;
-  constructor(public api: ApiGlobalService) { }
+  searchKey: string;
+  constructor(public api: ApiGlobalService,
+    private dialog: MatDialog) { }
 
   @ViewChild(MatSort, { static: true })
   sort!: MatSort;
@@ -52,10 +56,20 @@ export class VoitureComponent implements OnInit {
     });
   }
 
+  applyFilter() {
+    this.liste.filter =this.searchKey.trim().toLowerCase();
+  }
+
+  onSearchClear() {
+    this.searchKey="";
+    this.applyFilter();
+  }
   commenter(code: Number) {
     console.log("identifiant", code);
-    this.api.getComment(code).subscribe(res => {
-
-    })
+    this.dialog.open(CommentaireComponent,{
+      width:'45%',
+      height: '35%',
+      data :{code}
+    });
   }
 }

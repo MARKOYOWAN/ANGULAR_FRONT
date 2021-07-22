@@ -1,0 +1,17 @@
+<div>
+    <mat-progress-bar mode='indeterminate' *ngIf="showLoader"></mat-progress-bar>
+    <h2 mat-dialog-title class="center">Votre commentaire</h2>
+    <div *ngIf="!showLoader">
+        <mat-dialog-content>
+            <mat-label>
+                <p class="text">{{list?.email}}</p>
+                <p>{{list?.body}}</p>
+            </mat-label>
+        </mat-dialog-content>
+        <mat-dialog-actions>
+            <button class="btn" mat-raised-button color="warn" mat-dialog-close>Ok</button>
+
+        </mat-dialog-actions>
+    </div>
+
+</div>
