@@ -28,3 +28,24 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Angular Material 12.0.2
 lien : 
+
+## Lancement du projet
+
+## Etapa 1 : Télécharger le projet 
+
+## Etape 2 : Lancer cette commande npm install 
+
+## Etape 3 : ng serve -> pour lancer le projet 
+
+## Email qui existe dans l'API au cas ou vous avez besoin 
+
+Sincere@april.biz
+Shanna@melissa.tv
+Nathan@yesenia.net
+Julianne.OConner@kory.org
+Lucio_Hettinger@annie.ca
+Karley_Dach@jasper.info
+Telly.Hoeger@billy.biz
+Sherwood@rosamond.me
+Chaim_McDermott@dana.io
+Rey.Padberg@karina.biz

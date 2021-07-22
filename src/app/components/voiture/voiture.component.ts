@@ -37,8 +37,7 @@ export class VoitureComponent implements OnInit {
     this.api.geSorage().then((res) => {
       if (res) {
         this.api.login = true;
-        this.id = res.id;
-        console.log("data storage", res)
+        this.id = res.id; 
       }
     })
   }
@@ -64,8 +63,7 @@ export class VoitureComponent implements OnInit {
     this.searchKey="";
     this.applyFilter();
   }
-  commenter(code: Number) {
-    console.log("identifiant", code);
+  commenter(code: Number) { 
     this.dialog.open(CommentaireComponent,{
       width:'45%',
       height: '35%',

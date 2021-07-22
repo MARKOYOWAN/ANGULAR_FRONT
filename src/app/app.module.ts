@@ -56,12 +56,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component'; 
 import { ToastNoAnimationModule, ToastrModule } from 'ngx-toastr'; 
 import { CommonModule } from '@angular/common';
+import { CommentaireComponent } from './components/commentaire/commentaire.component';
 const routes: Routes = [];@NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
     VoitureComponent,
-    LoginComponent
+    LoginComponent,
+    CommentaireComponent
   ],
   imports: [
     CommonModule,

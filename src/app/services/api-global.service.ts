@@ -51,7 +51,7 @@ export class ApiGlobalService {
   }
 
   async removeClient() {
-    await  localStorage.removeItem('dataSource');
+    await  localStorage.clear();
     this.user.next(null);
   }
 

@@ -10,20 +10,24 @@ import { ApiGlobalService } from './services/api-global.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnChanges {
+  email: string;
   ngOnInit() {  
+    this.User();
   } 
   constructor(private route: Router,
     public api: ApiGlobalService,
     private dialog: MatDialog,) { }
 
   ngOnChanges() {  
+    this.User();
   }
   hide = true;
   title = 'Test';
 
   Deconnexion() {
-    this.api.login = false;
     this.api.removeClient();
+    this.api.login = false;
+    this.api.showSuccess('Vous avez Déconnecté', 'Avec succès');
   }
 
   Connexion(){
@@ -31,5 +35,13 @@ export class AppComponent implements OnInit, OnChanges {
       width:'35%',
       data :{}
     }); 
+  }
+
+  User() {
+    this.api.geSorage().then((res) => {
+      if (res) { 
+        this.email = res.email; 
+      }
+    })
   }
 }

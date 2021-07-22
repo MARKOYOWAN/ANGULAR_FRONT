@@ -3,12 +3,12 @@
 
 
         <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" [matMenuTriggerFor]="menu">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" [matMenuTriggerFor]="menu"> 
           <mat-icon>account_circle</mat-icon>
-          <mat-menu #menu="matMenu"> 
-            <button mat-menu-item>
-              <mat-icon>build</mat-icon>
-              <span>Modification</span> 
+          <mat-menu #menu="matMenu">  
+            <button *ngIf="api.login && email" mat-menu-item>
+              <mat-icon>account_circle</mat-icon>
+              <span >{{email}}</span> 
             </button>
         <button mat-menu-item *ngIf="api.login" (click)="Deconnexion()">
             <mat-icon>exit_to_app</mat-icon>

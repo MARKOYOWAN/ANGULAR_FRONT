@@ -26,8 +26,7 @@ export class CommentaireComponent implements OnInit {
     this.showLoader = true;
     this.api.getComment(this.id).subscribe(res => {
       if (res) {
-        this.showLoader = false;
-        console.log("commentaire", res);
+        this.showLoader = false; 
         this.list = res;
       }
     })
