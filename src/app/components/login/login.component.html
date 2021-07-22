@@ -1,11 +1,18 @@
 <div class="example-container">
-    <mat-progress-bar mode='indeterminate' *ngIf="showLoader"></mat-progress-bar>
-    <mat-form-field appearance="fill">
-        <mat-label>Enter your email</mat-label>
-        <input [(ngModel)]="modelCLient.email" matInput placeholder="pat@example.com">
-    </mat-form-field>
-    <div class="btn_log">
-        <button id="btn_with" mat-raised-button (click)="loginUser()">Connexion</button>
+    <div class="texte">
+        <p>Login</p>
     </div>
+    <mat-progress-bar mode='indeterminate' *ngIf="showLoader"></mat-progress-bar>
+    <form name="loginForm" [formGroup]="loginForm" novalidate (ngSubmit)="loginUser()">
+        <mat-form-field appearance="fill" class="login">
+            <mat-label>Enter votre email</mat-label>
+            <input matInput formControlName="email">
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <div class="btn_log">
+            <button id="btn_with" mat-raised-button [disabled]="loginForm.invalid">Connexion</button>
+        </div>
+
+    </form>
 
 </div>

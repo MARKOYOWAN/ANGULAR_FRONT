@@ -1,20 +1,29 @@
-<mat-toolbar color="primary">
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" [matMenuTriggerFor]="menu">
+<div>
+    <mat-toolbar color="primary">
+
+
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" [matMenuTriggerFor]="menu">
           <mat-icon>account_circle</mat-icon>
           <mat-menu #menu="matMenu"> 
             <button mat-menu-item>
               <mat-icon>build</mat-icon>
               <span>Modification</span> 
             </button>
-    <button mat-menu-item>
+        <button mat-menu-item *ngIf="api.login" (click)="Deconnexion()">
             <mat-icon>exit_to_app</mat-icon>
             <span>Déconnexion</span>
           </button>
-    </mat-menu>
-    </button>
-</mat-toolbar>
+        <button mat-menu-item *ngIf="!api.login" (click)="Connexion()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Connexion</span>
+          </button>
+        </mat-menu>
+        </button>
+    </mat-toolbar>
 
+</div>
 <div>
     <app-posts></app-posts>
+    <app-voiture></app-voiture>
 </div>

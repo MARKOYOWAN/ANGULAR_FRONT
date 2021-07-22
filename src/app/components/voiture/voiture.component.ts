@@ -16,8 +16,8 @@ export class VoitureComponent implements OnInit {
   liste!: MatTableDataSource<any>;
   displayedColumns: string[] = ['id', 'Title', 'Texte', 'Action'];
   showLoader: boolean = false;
-  login: boolean = false
-  constructor(private api: ApiGlobalService) { }
+  id: Number;
+  constructor(public api: ApiGlobalService) { }
 
   @ViewChild(MatSort, { static: true })
   sort!: MatSort;
@@ -30,10 +30,13 @@ export class VoitureComponent implements OnInit {
 
   InitialiseCode() {
     this.recupListElement();
-    const storage = this.api.geSorage();
-    if (storage) {
-      this.login = true;
-    }
+    this.api.geSorage().then((res) => {
+      if (res) {
+        this.api.login = true;
+        this.id = res.id;
+        console.log("data storage", res)
+      }
+    })
   }
 
 
@@ -47,5 +50,12 @@ export class VoitureComponent implements OnInit {
         this.showLoader = false;
       }
     });
+  }
+
+  commenter(code: Number) {
+    console.log("identifiant", code);
+    this.api.getComment(code).subscribe(res => {
+
+    })
   }
 }

@@ -49,16 +49,29 @@ import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { RouterModule, Routes } from '@angular/router';
 import { PostsComponent } from './components/posts/posts.component';
+import { HttpClientModule } from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { VoitureComponent } from './components/voiture/voiture.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component'; 
+import { ToastNoAnimationModule, ToastrModule } from 'ngx-toastr'; 
+import { CommonModule } from '@angular/common';
 const routes: Routes = [];@NgModule({
   declarations: [
     AppComponent,
-    PostsComponent
+    PostsComponent,
+    VoitureComponent,
+    LoginComponent
   ],
   imports: [
+    CommonModule,
     RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     A11yModule,
     ClipboardModule,
     CdkStepperModule,
@@ -102,7 +115,9 @@ const routes: Routes = [];@NgModule({
     MatTreeModule,
     OverlayModule,
     PortalModule,
-    ScrollingModule,
+    ScrollingModule, 
+    NgbModule
+      
   ],
   exports: [
     A11yModule,
@@ -149,6 +164,7 @@ const routes: Routes = [];@NgModule({
     OverlayModule,
     PortalModule,
     ScrollingModule,
+    HttpClientModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]
